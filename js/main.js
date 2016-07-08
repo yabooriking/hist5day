@@ -12,7 +12,7 @@ function setApikey() {
 
 function searchMemo() {
     var queryObj = {};
-    queryObj.db = "azure";
+    queryObj.db = "ybk";
     queryObj.col = "memo";
     queryObj.sortCriteria = '{"reg_date": -1}';
     queryObj.queryCriteria = '{"title": {"$regex": "' + $("#searchKeyword").val() + '"}}';
@@ -35,7 +35,7 @@ function newMemo() {
 
 function addMemo() {
     var queryObj = {};
-    queryObj.db = "azure";
+    queryObj.db = "ybk";
     queryObj.col = "memo";
     queryObj.insertObj = {"title": $("#selectedTitle").val(), "contents": $("#selectedContents").val(), "reg_date": {"$date": new Date().toISOString()}};
     mlabMongoDbHelper.addDocument(queryObj, function() {
@@ -46,7 +46,7 @@ function addMemo() {
 
 function updateMemo() {
     var queryObj = {};
-    queryObj.db = "azure";
+    queryObj.db = "ybk";
     queryObj.col = "memo";
     queryObj._id = $("#selectedId").val();
     queryObj.updateObj = {"title": $("#selectedTitle").val(), "contents": $("#selectedContents").val(), "reg_date": {"$date": new Date().toISOString()}};
@@ -58,7 +58,7 @@ function updateMemo() {
 
 function deleteMemo() {
     var queryObj = {};
-    queryObj.db = "azure";
+    queryObj.db = "ybk";
     queryObj.col = "memo";
     queryObj._id = $("#selectedId").val();
     mlabMongoDbHelper.deleteDocument(queryObj, function() {

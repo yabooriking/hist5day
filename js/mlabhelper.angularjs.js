@@ -22,6 +22,7 @@ var MlabMongoDbHelper = function (apikey, http) {
                     + "?apiKey=" + _apikey
                     + (queryObj.sortCriteria == undefined ? "" : "&s=" + queryObj.sortCriteria)
                     + (queryObj.queryCriteria == undefined ? "" : "&q=" + queryObj.queryCriteria);
+        console.log(sendUrl);
         return specialCharChanger(sendUrl);
     }
     
