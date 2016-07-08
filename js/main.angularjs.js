@@ -26,7 +26,6 @@ obj_NgApp.controller('ctr_keep', function ($scope, $http, $document, $window) {
             $scope.newMemo();        
         });
     }
-
     $scope.newMemo = function() {
         $scope.selectedId = "";
         $scope.selectedTitle = "";
@@ -35,7 +34,6 @@ obj_NgApp.controller('ctr_keep', function ($scope, $http, $document, $window) {
         $scope.newBool = true;
 
     }
-
     $scope.addMemo = function() {
         var queryObj = {};
         queryObj.db = "ybk";
@@ -44,7 +42,6 @@ obj_NgApp.controller('ctr_keep', function ($scope, $http, $document, $window) {
         mlabMongoDbHelper.addDocument(queryObj, function() {
             $scope.searchMemo();
         });
-
     };
 
     $scope.updateMemo = function() {
